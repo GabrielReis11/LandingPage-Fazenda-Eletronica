@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import 'animate.css';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Acme', sans-serif;
+}
+
+body{
+    background-color: rgb(136, 135, 135);
+    font-family: 'Acme', sans-serif;
+}
+
+header{
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 20vh;
+}
+
+img{
+    width: 75px;
+    height: 75px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    
+}
+
+.bloco{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    height: 420px;
+    background: rgba( 62, 60, 60, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 19.5px );
+    -webkit-backdrop-filter: blur( 19.5px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    overflow: hidden;
+}
+
+
+.bloco::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #fffffff6, #fffffff6);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}   
+
+.bloco::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #fffffff6, #fffffff6);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay:-3s;
+} 
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.bloco button{
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    transition: ease;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+}
+
+.bloco h1{
+    font-size: 46px;
+}
+
+h4 {
+   font-size: 18px;
+}
+
+.form{
+    position: absolute;
+    z-index: 10;
+    background: #3e3c3c;
+    inset: 2px;
+    border-radius: 20px;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 40px;
+    align-items: center;
+    color: white;
+}
+
+.bloco .form img{
+    filter: invert(100);
+}
